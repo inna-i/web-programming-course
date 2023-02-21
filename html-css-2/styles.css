@@ -1,4 +1,3 @@
-
 body, h1, h2, h5 {
     margin: 0;
     font-family: sans-serif;
@@ -21,11 +20,11 @@ header {
 }
 
 section {
-    padding: 200px 20px;
+    padding: 200px 40px;
 }
 
 section.about {
-    min-width: 300px;
+    width: 550px;
     background: #2c2b2e;
     color: #fff;
 }
@@ -61,4 +60,10 @@ section.about {
     font-size: 16px;
     letter-spacing: 2px;
     color: #7f7f7f;
+}
+
+h4 {
+    margin-top: 25px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
 }
