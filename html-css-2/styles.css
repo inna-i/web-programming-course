@@ -1,0 +1,64 @@
+
+body, h1, h2, h5 {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 60px;
+    display: flex;
+    height: 106px;
+    width: 100%;
+    background: #dddcdf;
+}
+
+section {
+    padding: 200px 20px;
+}
+
+section.about {
+    min-width: 300px;
+    background: #2c2b2e;
+    color: #fff;
+}
+
+.avatar {
+    position: relative;
+    width: 340px;
+}
+
+.avatar img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    border-radius: 100%;
+    border: 10px solid #cdcace;
+}
+
+.title {
+    padding: 20px 40px;
+}
+
+.title h1 {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.title h5 {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #7f7f7f;
+}
