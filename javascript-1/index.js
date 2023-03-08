@@ -46,8 +46,8 @@ const circleSquare = typeof radius == 'number'
 
 // console.log(circleSquare);
 
-console.log(typeof sayHi);
-console.log(typeof array);
+// console.log(typeof sayHi);
+// console.log(typeof array);
 
 let text = 'Hello from Kyiv!';
 text += ' Have a nice day!'
@@ -79,5 +79,5 @@ const sum = a >= 100 || isBValid
     ? a + b + 1000
     : a + b;
 
-console.log(' a >= 100 ', a >= 100);
-console.log(' sum = ', sum);
+// console.log(' a >= 100 ', a >= 100);
+// console.log(' sum = ', sum);
