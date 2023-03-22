@@ -84,3 +84,11 @@ if(Object.isExtensible(obj2)){
     obj2['c'] = 88;
 	console.log("object is extensible ", obj2)
 }
+
+const obj3 = {
+    ...obj1,
+    ...obj2,
+    c: 333,
+}
+
+console.log('obj 3 ', obj3)
