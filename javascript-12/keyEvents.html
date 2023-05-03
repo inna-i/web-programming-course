@@ -1,0 +1,26 @@
+<html>
+  <head><title>My webpage</title></head>
+  <body>
+ 
+    <form>
+        <label for="bio"> Feedback (keyup) </label><br>
+        <textarea id="bio" value="" rows="6" cols="30"></textarea>
+        <br/>
+        <label for="feedback"> Feedback (keydown) </label><br>
+        <textarea id="feedback" value="" rows="6" cols="30"></textarea>
+    </form>
+ 
+   <script>
+        const bio = document.getElementById('bio');
+        bio.addEventListener('keyup', e => console.log('keyup ', e));
+ 
+     	const feedback = document.getElementById('feedback');
+        feedback.placeholder = 'Add feedback...';
+        
+        feedback.addEventListener('keydown', event => console.log('keydown ', event));
+        feedback.addEventListener('change', e => console.log(e.target.value));  
+ 
+   </script>
+ 
+  </body>
+</html>
