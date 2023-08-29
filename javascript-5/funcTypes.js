@@ -1,17 +1,23 @@
-fnDeclaration('Bruce Wayne');
+fnDeclaration('My text'); // hoisting
 
-const fnArrow = (name) => {
-    console.log('Hello from arrow fn my name is' + name + '!');
+// arrow function
+const arrowFn = (text) => {
+    console.log('Hello from arrow function. ', text);
+}
+arrowFn('My custom text');
+
+// function declaration
+function fnDeclaration(text) {
+    console.log('Hello from function declaration. ', text);
 }
 
-const fnExpression = function(name) {
-    console.log('Hello from fnExpression my name is' + name + '!');
+// function expression
+const fnExpression = function(text) {
+    console.log('Hello from function expression. ', text);
 }
+fnExpression('My text');
 
-function fnDeclaration(name) {
-    console.log('Hello from fnDeclaration my name is' + name + '!');
-}
-
-// hoisting
-fnArrow('Bruce Wayne');
-fnExpression('Bruce Wayne');
+// immediately invoked function expression or IIFE
+(function(){
+    console.log('Hello from IIFE!');
+})();
