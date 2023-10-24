@@ -1,28 +1,31 @@
-class Heroe {
-	constructor (comicsName, heroeName, superPower){
-		this.comicsName = comicsName;
-		this.heroeName = heroeName;
-		this.superPower = superPower;
+class Hero {
+	constructor(name, heroName, superPower) {
+		this.name = name;
+		this.heroName = heroName;
+		this.superPower = superPower
 	}
 
-    helloMethod(){
-		console.log('Hello, I am ', this.heroeName);
-	}
-	aboutHeroe(){
-		console.log(`I am heroe from ${this.comicsName} and my superpower is ${this.superPower}`)
+	hello() {
+		console.log(`Hello, I am ${this.heroName}`);
 	}
 
-    setHeroeName(name) {
-        this.heroeName = name;
-    }
+	getSuperPower() {
+		console.log(`I am ${this.heroName}, and I have super power ${this.superPower}`)
+	}
+
+	getHeroName() {
+		console.log(`I am ${this.heroName}`);
+	}
 }
 
-const Punisher = new Heroe('Marvel', 'Punisher', 'Strenght');
-Punisher.helloMethod();
-Punisher.aboutHeroe();
-// Punisher.setHeroeName('John');
-// Punisher.helloMethod();
+const Punisher = new Hero('Frank', 'Punisher', 'Stregth');
+Punisher.hello();
+Punisher.getSuperPower();
+Punisher.getHeroName();
 
-const Batman = new Heroe('DC', 'Batman', 'Smart')
-Batman.helloMethod();
-Batman.aboutHeroe();
+console.log('=============================================')
+
+const Batman = new Hero('Bruce', 'Batman', 'Inteligence');
+Batman.hello();
+Batman.getSuperPower();
+Batman.getHeroName();

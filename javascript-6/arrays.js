@@ -1,83 +1,37 @@
-const nums = [1, 2, 3];
-nums.push(4);
-nums.unshift(0);
-nums[5] = 5;
-nums.push(6, 7);
-nums.pop();
-nums.shift();
-// console.log('nums ', nums);
-
+// cars arrays
 const cars1 = ['bmw', 'tesla', 'minicooper'];
 const cars2 = ['vw', 'opel', 'toyota'];
 
-// const cars = cars1.concat(cars2);
-const cars = [...cars1, ...cars2];
+cars2.push('mazda');
+console.log(cars2.pop())
+console.log(cars2.shift())
+console.log('cars2  after shift ', cars2);
+cars2.unshift('vw');
+console.log('cars2  ', cars2);
 
-// console.log('cars ', cars);
-
-const gamesP1 = [
+// games arrays
+const gamesPart1 = [
 	{
         game: 'Dark Souls',
 		genre: 'rpg'
 	},
 	{ 
-		name: 'god of war',
+		name: 'God of War',
 		genre: 'action advanture'
 	}
-]
+];
 
-const gamesP2 = [
+const gamesPart2 = [
 	{
-        game: 'Battlefield',
-		genre: 'shooter'
+        game: "Baldur's Gate",
+		genre: 'rpg'
 	},
 	{ 
 		name: 'Call of duty',
 		genre: 'shooter'
 	}
-]
+];
 
-const allGames = [...gamesP1, ...gamesP2];
-
-function swap(arr, index1, index2) {
-	const temp = arr[index1];
-	arr[index1] = arr[index2];
-	arr[index2] = temp;
-}
-
-// swap(allGames, 0, 1);
-
-function swapD(arr, index1, index2) {
-    [arr[index1], arr[index2]] = [arr[index2], arr[index1]];
-}
-swapD(allGames, 0, 1);
-// console.log(allGames)
-
-// const [gameTop1, gameTop2, gameTop3] = allGames;
-
-// console.log('game 1 ', gameTop1);
-// console.log('game 2 ', gameTop2);
-
-function getTop3(games) {
-    return [games[0], games[1], games[2]];
-}
-
-const [gameTop1, gameTop2, gameTop3] = getTop3(allGames);
-
-// console.log('game top 1 ', gameTop1);
-// console.log('game top 2 ', gameTop2);
-// console.log('game top 3 ', gameTop3);
-
-function getTop1(games) {
-    let obj = {
-		...games[0], rating: 10
-	};
-	return [obj];
-}
-// destructor
-// const [gameTop] = getTop1(allGames);
-// console.log('game top  ', gameTop);
-
-const result = getTop1(allGames);
-
-console.log(result[0])
+// const allGames = [...gamesPart1, ...gamesPart2];
+const allGames = gamesPart1.concat(gamesPart2);
+console.log('allGames  ', allGames)
