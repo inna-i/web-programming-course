@@ -13,9 +13,8 @@ function Food(name, price) {
     this.category = 'food';
 }
 
-const cheese = new Food('cheese', 5);
-console.log(cheese.category);
-console.log(cheese.name);
-cheese.getPrice()
-  // expected output: "cheese"
-  
+const drinks = new Food('drinks', 5);
+console.log(drinks.category);
+console.log(drinks.price);
+
+drinks.getPrice();

@@ -5,19 +5,18 @@ function Cat(name, color) {
     this.jump = function() {
         console.log(`${this.name} is jumping`);
     }
-  }
-   
-Cat.prototype.run = function () {
-    console.log("I’m running");
-};
-Cat.prototype.sound = function () {
-    console.log("Meow! Meow!");
-};
+}
 
-// Tom => Cat => method? => fn Cat => Cat.__proto__ => method
-const Tom = new Cat("Tom", "grey");
-const Simon = new Cat("Simon", "red");
+Cat.prototype.run = function() {
+    console.log(`${this.name} is running`);
+}
 
-Tom.sound();
-Tom.jump();
-  
+Cat.prototype.sound = function() {
+    console.log('Meow! Meow!');
+}
+
+const Simon = new Cat('Simon', 'red');
+const Felix = new Cat('Felix', 'black');
+
+Simon.run();
+Felix.sound();

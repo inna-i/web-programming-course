@@ -1,36 +1,38 @@
-	
 class Cat {
-    constructor(name, color) {
-        this.name = name;
-        this.color = color;
-    }
- 
-    run() {
-        console.log(this.name +  " is running");
-    }
- 
-    sound() {
-        console.log("Meow! Meow!");
-    }
+  constructor(name, color) {
+    this.name = name;
+    this.color = color;
+  }
+
+  run() {
+    console.log(this.name + ' is running');
+  }
+
+  sound() {
+    console.log('Meow! Meow!');
+  }
 }
- 
+
 class LazyCat extends Cat {
   constructor(name, color) {
     super(name, color);
 
     this.isLazy = true;
   }
-  
+
+  checkIsLazy() {
+    console.log('I am lazy cat');
+  }
+
   run() {
-    console.log(this.name + ' is too lazy to run');
+    console.log(this.name + ' is to lazy to run');
   }
 }
- 
-const Simon = new LazyCat("Simon", "grey");
-const Felix = new Cat("Felix", "white");
 
-Felix.run();
-console.log('Felix ', Felix.isLazy)
-console.log('=============================')
+const Tom = new Cat('Tom', 'black');
+Tom.run();
+
+const Simon = new LazyCat('Simon', 'white');
 Simon.run();
-console.log('Simon ', Simon.isLazy)
+Simon.sound();
+Simon.checkIsLazy()
