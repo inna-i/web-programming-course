@@ -3,17 +3,18 @@ async function getUsers() {
     const USERS_URL = 'https://api.github.com/users'; // REST API
 
     try {
-        let res = await fetch(USERS_URL);
+        let res = await fetch(USERS_URL); // GET
 
         return res.json();
-    } catch(error) {
+
+    } catch (error) {
         console.error(error);
     }
 }
 
 /* async opearation - element rendering */
 async function renderUsers() {
-    let users = await getUsers();
+    const users = await getUsers();
     let html = '';
 
     users.forEach(user => {
@@ -25,12 +26,14 @@ async function renderUsers() {
         `;
 
         html += htmlSegment;
-    });
+    })
 
     const list = document.getElementById('users-list');
     list.innerHTML = html;
+
 }
 
+// DOM event listener
 document.addEventListener('DOMContentLoaded', function() {
     renderUsers();
 }, false);
