@@ -43,30 +43,34 @@ async function renderUsers() {
     list.innerHTML = html;
 }
 
+function getPopupMarkup(user) {
+    return `
+        <img src="${user.avatar_url}">
+        <div>
+            <h2>${user.login}</h2>
+            <p>Name: <b>${user.name}</b></p>
+            <p>Company: <b>${user.company || '-'}</b></p>
+            <p>Location: <b>${user.location || '-'}</b></p>
+            <p>Blog: <a href="${user.blog}" target="_blank">${user.blog || '-'}</a></p>
+            <p>Repository: <a href="${user.html_url}" target="_blank">${user.html_url}</a></p>
+        </div>        
+    `;
+}
+
 async function showPopup() {
     const list = document.getElementById('users-list');
     const popup = document.getElementById('popup-wrapper');
     const popupCloseBtn = document.querySelector('.popup-close');
     const popupContent = document.querySelector('.popup-content');
 
-    list.addEventListener('click', async ({ target }) => {
+    list.onclick = async ({ target }) => {
         if (target.dataset.login == undefined) {
             return;
         }
 
         const user = await getUserById(target.dataset.login);
 
-        const html = `
-            <img src="${user.avatar_url}">
-            <div>
-                <h2>${user.login}</h2>
-                <p>Name: <b>${user.name}</b></p>
-                <p>Company: <b>${user.company ? user.company : '-'}</b></p>
-                <p>Location: <b>${user.location ? user.location : '-'}</b></p>
-                <p>Blog: <a href="${user.blog}" target="_blank">${user.blog}</a></p>
-                <p>Repository: <a href="${user.html_url}" target="_blank">${user.html_url}</a></p>
-            </div>        
-        `;
+        const html = getPopupMarkup(user);
 
         popupContent.innerHTML = html;
 
@@ -76,7 +80,7 @@ async function showPopup() {
         popupCloseBtn.addEventListener('click', () => {
             popup.style.top = '-100%';
         });
-    });
+    };
 }
 
 document.addEventListener('DOMContentLoaded', function() {

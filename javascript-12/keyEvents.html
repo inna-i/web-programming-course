@@ -25,15 +25,15 @@
     </form>
  
    <script>
-        const bio = document.getElementById('bio');
-        bio.addEventListener('keyup', e => console.log('keyup ', e));
- 
-     	  const feedback = document.getElementById('feedback');
-        feedback.placeholder = 'Add feedback...';
-        
-        feedback.addEventListener('keydown', event => console.log('keydown ', event));
-        feedback.addEventListener('change', e => console.log(e.target.value));  
- 
+      const bio = document.getElementById('bio');
+      bio.addEventListener('keyup', e => console.log(e));
+      bio.placeholder = 'Add your bio';
+      bio.style.color = 'red';
+
+      const feedback = document.getElementById('feedback');
+      feedback.addEventListener('keydown', e => console.log(e));
+      feedback.placeholder = 'Add your feedback';
+      feedback.style.border = '2px solid blue';
    </script>
  
   </body>
