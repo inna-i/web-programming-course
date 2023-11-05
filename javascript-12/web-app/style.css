@@ -52,7 +52,7 @@ h1 {
     border: 1px solid #dcdada;
 }
 
-#popup-close {
+.popup-close {
     position: absolute;
     top: 0;
     right: 0;
@@ -64,17 +64,20 @@ h1 {
     cursor: pointer;
 }
 
-#popup-content {
+.popup-content {
     display: flex;
     height: 100%;
     align-items: center;
     justify-content: center;
 }
-#popup-content img {
+
+.popup-content img {
     width: 250px;
     border-radius: 50%;
     cursor: pointer;
 }
-#popup-content div {
+
+.popup-content div {
     padding: 0 30px;
+    text-align: left;
 }

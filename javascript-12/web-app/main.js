@@ -46,10 +46,10 @@ async function renderUsers() {
 async function showPopup() {
     const list = document.getElementById('users-list');
     const popup = document.getElementById('popup-wrapper');
-    const popupCloseBtn = document.querySelector('#popup-close');
-    const popupContent = document.querySelector('#popup-content');
+    const popupCloseBtn = document.querySelector('.popup-close');
+    const popupContent = document.querySelector('.popup-content');
 
-    list.onclick = async ({ target }) => {
+    list.addEventListener('click', async ({ target }) => {
         if (target.dataset.login == undefined) {
             return;
         }
@@ -60,11 +60,11 @@ async function showPopup() {
             <img src="${user.avatar_url}">
             <div>
                 <h2>${user.login}</h2>
-                <p>name: <b>${user.name}</b></p>
-                <p>company: <b>${user.company ? user.company : '-'}</b></p>
-                <p>location: <b>${user.location ? user.location : '-'}</b></p>
-                <p>blog: <a href="${user.blog}" target="_blank">${user.blog}</a></p>
-                <p>repository: <a href="${user.html_url}" target="_blank">${user.html_url}</a></p>
+                <p>Name: <b>${user.name}</b></p>
+                <p>Company: <b>${user.company ? user.company : '-'}</b></p>
+                <p>Location: <b>${user.location ? user.location : '-'}</b></p>
+                <p>Blog: <a href="${user.blog}" target="_blank">${user.blog}</a></p>
+                <p>Repository: <a href="${user.html_url}" target="_blank">${user.html_url}</a></p>
             </div>        
         `;
 
@@ -76,7 +76,7 @@ async function showPopup() {
         popupCloseBtn.addEventListener('click', () => {
             popup.style.top = '-100%';
         });
-    }
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function() {

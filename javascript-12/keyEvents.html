@@ -1,5 +1,19 @@
 <html>
-  <head><title>My webpage</title></head>
+  <head>
+    <title>My webpage</title>
+    <style>
+      form {
+        padding: 30px;
+        font-family: sans-serif;
+      }
+      textarea { margin-bottom: 30px; padding: 8px;}
+      label {
+          display: inline-block;
+          margin-bottom: 10px;
+      }
+    </style>
+  
+  </head>
   <body>
  
     <form>
@@ -14,7 +28,7 @@
         const bio = document.getElementById('bio');
         bio.addEventListener('keyup', e => console.log('keyup ', e));
  
-     	const feedback = document.getElementById('feedback');
+     	  const feedback = document.getElementById('feedback');
         feedback.placeholder = 'Add feedback...';
         
         feedback.addEventListener('keydown', event => console.log('keydown ', event));
