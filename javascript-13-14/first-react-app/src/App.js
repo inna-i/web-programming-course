@@ -34,6 +34,8 @@ const routes = [{
 	render: () => <Redirect to="/about" />,
 }];
 
+const myEnv = process.env.REACT_APP_API_URL;
+console.log('==================   ', myEnv)
 
 function App() {
 	return (

@@ -64,14 +64,13 @@ async function showPopup() {
     const popupContent = document.querySelector('.popup-content');
 
     list.onclick = async ({ target }) => {
-        if (target.dataset.login == undefined) {
+        if (target.dataset.login === undefined) {
             return;
         }
 
         const user = await getUserById(target.dataset.login);
 
         const html = getPopupMarkup(user);
-
         popupContent.innerHTML = html;
 
         // make popup visible
@@ -80,10 +79,24 @@ async function showPopup() {
         popupCloseBtn.addEventListener('click', () => {
             popup.style.top = '-100%';
         });
-    };
+    }
+}
+
+function showWelcomeMessage() {
+    const key = 'notFirstVisit';
+    const isNotFirstVisit = localStorage.getItem(key) === 'yes';
+    const welcomeBanner = document.querySelector('.welcome');
+
+    if (isNotFirstVisit) {
+        welcomeBanner.textContent = 'Hello! May the Force be with You'; 
+    } else {
+        localStorage.setItem(key, 'yes');
+        welcomeBanner.textContent = 'Welcome! This is my first web page'; 
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     renderUsers();
     showPopup();
+    showWelcomeMessage();
 }, false);
