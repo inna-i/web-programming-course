@@ -95,6 +95,28 @@ function showWelcomeMessage() {
     }
 }
 
+function setCookie() {
+    // set cookie
+    document.cookie = 'yummy_cookie=choco';
+    document.cookie = 'tasty_cookie=strawberry';
+    console.log('cookie:  ', document.cookie);
+}
+
+function setSessionStorage() {
+    const KEY = 'token';
+    // Save data to sessionStorage
+    sessionStorage.setItem(KEY, 'tokenValue');
+
+    // Get saved data from sessionStorage
+    let data = sessionStorage.getItem(KEY);
+    console.log('session storage ', data);
+    // Remove saved data from sessionStorage
+    // sessionStorage.removeItem(KEY);
+
+    // Remove all saved data from sessionStorage
+    // sessionStorage.clear();
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     renderUsers();
     showPopup();
