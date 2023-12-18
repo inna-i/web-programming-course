@@ -82,34 +82,39 @@ async function showPopup() {
     }
 }
 
+// show message using localStorage
 function showWelcomeMessage() {
-    const key = 'notFirstVisit';
-    const isNotFirstVisit = localStorage.getItem(key) === 'yes';
+    const KEY = 'notFirstVisit';
+
+    const isNotFirstVisit = localStorage.getItem(KEY) === 'yes';
     const welcomeBanner = document.querySelector('.welcome');
 
     if (isNotFirstVisit) {
-        welcomeBanner.textContent = 'Hello! May the Force be with You'; 
+        welcomeBanner.textContent = 'Hello! May the Force be with You';
     } else {
-        localStorage.setItem(key, 'yes');
-        welcomeBanner.textContent = 'Welcome! This is my first web page'; 
+        localStorage.setItem(KEY, 'yes');
+        welcomeBanner.textContent = 'Welcome! This this my fisrt web page';
     }
 }
 
+// use cookie
 function setCookie() {
     // set cookie
     document.cookie = 'yummy_cookie=choco';
     document.cookie = 'tasty_cookie=strawberry';
-    console.log('cookie:  ', document.cookie);
+    console.log(' cookie: ', document.cookie)
 }
 
+// use sessionStorage
 function setSessionStorage() {
     const KEY = 'token';
-    // Save data to sessionStorage
+
+    // Save data to session storage
     sessionStorage.setItem(KEY, 'tokenValue');
 
-    // Get saved data from sessionStorage
-    let data = sessionStorage.getItem(KEY);
-    console.log('session storage ', data);
+    // Get data from session storage
+    console.log('sessionStorage ', sessionStorage.getItem(KEY));
+
     // Remove saved data from sessionStorage
     // sessionStorage.removeItem(KEY);
 
@@ -121,4 +126,6 @@ document.addEventListener('DOMContentLoaded', function() {
     renderUsers();
     showPopup();
     showWelcomeMessage();
+    setCookie();
+    setSessionStorage();
 }, false);
