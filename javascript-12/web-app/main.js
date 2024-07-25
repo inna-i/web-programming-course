@@ -11,7 +11,7 @@ async function getUsers() {
     }
 }
 /* Fetch user by login field from GitHub API */
-async function getUserById(login) {
+async function getUserByLogin(login) {
     const USER_URL = `https://api.github.com/users/${login}`; // REST API
 
     try {
@@ -68,7 +68,7 @@ async function showPopup() {
             return;
         }
 
-        const user = await getUserById(target.dataset.login);
+        const user = await getUserByLogin(target.dataset.login);
 
         const html = getPopupMarkup(user);
         popupContent.innerHTML = html;
